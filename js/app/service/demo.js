@@ -2,24 +2,22 @@ import {CheerioWebBaseLoader} from "@langchain/community/document_loaders/web/ch
 import {RecursiveCharacterTextSplitter} from "langchain/text_splitter";
 import {MemoryVectorStore} from "langchain/vectorstores/memory";
 import {ChatOllama, OllamaEmbeddings} from "@langchain/ollama";
-import {ChatPromptTemplate} from "@langchain/core/prompts";
 import {pull} from "langchain/hub";
 import {StringOutputParser} from "@langchain/core/output_parsers";
 import {createStuffDocumentsChain} from "langchain/chains/combine_documents";
-
+import {TextLoader} from "langchain/document_loaders/fs/text";
 
 const llm = new ChatOllama({
     model: "llama3.1:latest",
     temperature: 0
 });
-
-
 const getDocuments = async () => {
     const pTagSelector = "p";
-    const loader = new CheerioWebBaseLoader("https://juejin.cn/post/7378779608353669158?searchId=2024081815245427E7CE3545CB9BA5404E", {
-        selector: pTagSelector,
-    });
-
+    // const loader = new CheerioWebBaseLoader("https://juejin.cn/post/7378779608353669158?searchId=2024081815245427E7CE3545CB9BA5404E", {
+    //     selector: pTagSelector,
+    // });
+    //
+    const loader = new TextLoader("D:\\doc\\测试知识库.txt",)
     return await loader.load()
 }
 
