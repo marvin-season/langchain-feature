@@ -1,5 +1,6 @@
 import express from "express";
 import {chain, createStore, getDocuments, split} from "../service/demo.js";
+import {run} from "../vector/LanceDB.js";
 
 const DemoRouter = express.Router();
 
@@ -23,6 +24,11 @@ DemoRouter.get("/rag/:prompt", async (request, res) => {
         question: prompt,
     });
     res.json({context, answer, prompt})
+})
+
+DemoRouter.get("/vector/:prompt", async (request, res) => {
+    run()
+    res.json({})
 })
 
 export default (ApiRouter) => {

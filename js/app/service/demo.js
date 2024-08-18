@@ -6,6 +6,7 @@ import {pull} from "langchain/hub";
 import {StringOutputParser} from "@langchain/core/output_parsers";
 import {createStuffDocumentsChain} from "langchain/chains/combine_documents";
 import {TextLoader} from "langchain/document_loaders/fs/text";
+import {createOllamaEmbedding} from "../embedding/ollama/index.js";
 
 const llm = new ChatOllama({
     model: "llama3.1:latest",
@@ -32,9 +33,7 @@ const split = async (docs) => {
 const createStore = async (allSplits) => {
     return await MemoryVectorStore.fromDocuments(
         allSplits,
-        new OllamaEmbeddings({
-            model: 'mxbai-embed-large:latest'
-        })
+        createOllamaEmbedding()
         // new AzureOpenAIEmbeddings({
         //     azureOpenAIApiKey: process.env.AZURE_OPENAI_KEY,
         //     azureOpenAIBasePath: process.env.AZURE_OPENAI_ENDPOINT,

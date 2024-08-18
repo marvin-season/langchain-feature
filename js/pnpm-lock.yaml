@@ -10,19 +10,19 @@ importers:
     dependencies:
       '@langchain/azure-openai':
         specifier: ^0.0.11
-        version: 0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+        version: 0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       '@langchain/community':
         specifier: ^0.2.27
-        version: 0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+        version: 0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2))
       '@langchain/core':
         specifier: ^0.2.27
-        version: 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+        version: 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       '@langchain/ollama':
         specifier: ^0.0.4
         version: 0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))
       '@langchain/openai':
         specifier: ^0.2.6
-        version: 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+        version: 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
       cheerio:
         specifier: ^1.0.0
         version: 1.0.0
@@ -34,13 +34,23 @@ importers:
         version: 4.19.2
       langchain:
         specifier: ^0.2.16
-        version: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+        version: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      vectordb:
+        specifier: ^0.9.0
+        version: 0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)
     devDependencies:
       nodemon:
         specifier: ^2.0.22
         version: 2.0.22
 
 packages:
+
+  '@75lb/deep-merge@1.1.2':
+    resolution: {integrity: sha512-08K9ou5VNbheZFxM5tDWoqjA3ImC50DiuuJ2tj1yEPRfkp8lLLg6XAaJ4On+a0yAXor/8ay5gHnAIshRM44Kpw==}
+    engines: {node: '>=12.17'}
+
+  '@apache-arrow/ts@14.0.2':
+    resolution: {integrity: sha512-CtwAvLkK0CZv7xsYeCo91ml6PvlfzAmAJZkRYuz2GNBwfYufj5SVi0iuSMwIMkcU/szVwvLdzORSLa5PlF/2ug==}
 
   '@azure-rest/core-client@1.4.0':
     resolution: {integrity: sha512-ozTDPBVUDR5eOnMIwhggbnVmOrka4fXCs8n8mvUo4WLLc38kki6bAOByDoVZZPz/pZy2jMt2kwfpvy/UjALj6w==}
@@ -77,6 +87,31 @@ packages:
   '@azure/openai@1.0.0-beta.11':
     resolution: {integrity: sha512-OXS27xkG1abiGf5VZUKnkJKr1VCo8+6EUrTGW5aSVjc5COqX8jAUqVAOZsQVCHBdtWYSBULlZkc0ncKMTRQAiQ==}
     engines: {node: '>=18.0.0'}
+
+  '@lancedb/vectordb-darwin-arm64@0.4.20':
+    resolution: {integrity: sha512-ffP2K4sA5mQTgePyARw1y8dPN996FmpvyAYoWO+TSItaXlhcXvc+KVa5udNMCZMDYeEnEv2Xpj6k4PwW3oBz+A==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@lancedb/vectordb-darwin-x64@0.4.20':
+    resolution: {integrity: sha512-GSYsXE20RIehDu30FjREhJdEzhnwOTV7ZsrSXagStzLY1gr7pyd7sfqxmmUtdD09di7LnQoiM71AOpPTa01YwQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@lancedb/vectordb-linux-arm64-gnu@0.4.20':
+    resolution: {integrity: sha512-FpNOjOsz3nJVm6EBGyNgbOW2aFhsWZ/igeY45Z8hbZaaK2YBwrg/DASoNlUzgv6IR8cUaGJ2irNVJfsKR2cG6g==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@lancedb/vectordb-linux-x64-gnu@0.4.20':
+    resolution: {integrity: sha512-pOqWjrRZQSrLTlQPkjidRii7NZDw8Xu9pN6ouVu2JAK8n81FXaPtFCyAI+Y3v9GpnYDN0rvD4eQ36aHAVPsa2g==}
+    cpu: [x64]
+    os: [linux]
+
+  '@lancedb/vectordb-win32-x64-msvc@0.4.20':
+    resolution: {integrity: sha512-5J5SsYSJ7jRCmU/sgwVHdrGz43B/7R2T9OEoFTKyVAtqTZdu75rkytXyn9SyEayXVhlUOaw76N0ASm0hAoDS/A==}
+    cpu: [x64]
+    os: [win32]
 
   '@langchain/azure-openai@0.0.11':
     resolution: {integrity: sha512-DugOrQknXAr1Hi5uLE5pFOzMCSQeR3YJsF4wBlyqUssgqPafzd5Rnvhir/gL5bQQ43HoglUqiL6qhIDDnA3Fug==}
@@ -464,11 +499,26 @@ packages:
     resolution: {integrity: sha512-cXWgKE3sdWLSqAa8ykbCcUsUF1Kyr5J3HOWYGuobhPEycXW4WI++d5DhzdpL238mzoEXTi90VqfSCra37l5YqA==}
     engines: {node: '>=18'}
 
+  '@neon-rs/load@0.0.74':
+    resolution: {integrity: sha512-/cPZD907UNz55yrc/ud4wDgQKtU1TvkD9jeqZWG6J4IMmZkp6zgjkQcKA8UvpkZlcpPHvc8J17sGzLFbP/LUYg==}
+
+  '@types/command-line-args@5.2.0':
+    resolution: {integrity: sha512-UuKzKpJJ/Ief6ufIaIzr3A/0XnluX7RvFgwkV89Yzvm77wCh1kFaFmqN8XEnGcN62EuHdedQjEMb8mYxFLGPyA==}
+
+  '@types/command-line-usage@5.0.2':
+    resolution: {integrity: sha512-n7RlEEJ+4x4TS7ZQddTmNSxP+zziEG0TNsMfiRIxcIVXt71ENJ9ojeXmGO3wPoTdn7pJcU2xc3CJYMktNT6DPg==}
+
   '@types/node-fetch@2.6.11':
     resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
 
   '@types/node@18.19.44':
     resolution: {integrity: sha512-ZsbGerYg72WMXUIE9fYxtvfzLEuq6q8mKERdWFnqTmOvudMxnz+CBNRoOwJ2kNpFOncrKjT1hZwxjlFgQ9qvQA==}
+
+  '@types/node@20.3.0':
+    resolution: {integrity: sha512-cumHmIAf6On83X7yP+LrsEyUOf/YlociZelmpRYaGFydoaPdxdt80MAbu6vWerQT2COCp2nPvHdsbD7tHn/YlQ==}
+
+  '@types/pad-left@2.1.1':
+    resolution: {integrity: sha512-Xd22WCRBydkGSApl5Bw0PhAOHKSVjNL3E3AwzKaps96IMraPqy5BvZIsBVK6JLwdybUzjHnuWVwpDd0JjTfHXA==}
 
   '@types/retry@0.12.0':
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
@@ -492,6 +542,10 @@ packages:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
     engines: {node: '>= 8.0.0'}
 
+  ansi-styles@4.3.0:
+    resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
+    engines: {node: '>=8'}
+
   ansi-styles@5.2.0:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
@@ -500,14 +554,29 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
+  apache-arrow@14.0.2:
+    resolution: {integrity: sha512-EBO2xJN36/XoY81nhLcwCJgFwkboDZeyNQ+OPsG7bCoQjc2BT0aTyH/MR6SrL+LirSNz+cYqjGRlupMMlP1aEg==}
+    hasBin: true
+
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  array-back@3.1.0:
+    resolution: {integrity: sha512-TkuxA4UCOvxuDK6NZYXCalszEzj+TLszyASooky+i742l9TqsOdYCMJJupxRic61hwquNtppB3hgcuq9SVSH1Q==}
+    engines: {node: '>=6'}
+
+  array-back@6.2.2:
+    resolution: {integrity: sha512-gUAZ7HPyb4SJczXAMUXMGAvI976JoK3qEx9v1FTmeYuJj0IBiaKttG1ydtGKdkfqWkIkouke7nG8ufGy77+Cvw==}
+    engines: {node: '>=12.17'}
 
   array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
 
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+
+  axios@1.7.4:
+    resolution: {integrity: sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -545,6 +614,14 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
+  chalk-template@0.4.0:
+    resolution: {integrity: sha512-/ghrgmhfY8RaSdeo43hNXxpoHAtxdbskUHjPpfqUWGttFgycUhYPGx3YZBCnUCvOa7Doivn1IZec3DEGFoMgLg==}
+    engines: {node: '>=12'}
+
+  chalk@4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
+    engines: {node: '>=10'}
+
   cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
 
@@ -556,9 +633,24 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
+  color-convert@2.0.1:
+    resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
+    engines: {node: '>=7.0.0'}
+
+  color-name@1.1.4:
+    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
+
+  command-line-args@5.2.1:
+    resolution: {integrity: sha512-H4UfQhZyakIjC74I9d34fGYDwk3XpSr17QhEd0Q3I9Xq1CETHo4Hcuo87WyWHpAF1aSLjLRf5lD9ZGX2qStUvg==}
+    engines: {node: '>=4.0.0'}
+
+  command-line-usage@7.0.1:
+    resolution: {integrity: sha512-NCyznE//MuTjwi3y84QVUGEOT+P5oto1e1Pk/jFPVdPPfsG03qpTIl3yw6etR+v73d0lXsoojRpvbru2sqePxQ==}
+    engines: {node: '>=12.20.0'}
 
   commander@10.0.1:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
@@ -702,9 +794,25 @@ packages:
     resolution: {integrity: sha512-5uXcUVftlQMFnWC9qu/svkWv3GTd2PfUhK/3PLkYNAe7FbqJMt3515HaxE6eRL74GdsriiwujiawdaB1BpEISg==}
     engines: {node: '>= 0.8'}
 
+  find-replace@3.0.0:
+    resolution: {integrity: sha512-6Tb2myMioCAgv5kfvP5/PkZZ/ntTpVK39fHY7WkWBgvbeE+VHd/tZuZ4mrC+bxh4cfOZeYKVPaJIZtZXV7GNCQ==}
+    engines: {node: '>=4.0.0'}
+
   flat@5.0.2:
     resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
     hasBin: true
+
+  flatbuffers@23.5.26:
+    resolution: {integrity: sha512-vE+SI9vrJDwi1oETtTIFldC/o9GsVKRM+s6EL0nQgxXlYV1Vc4Tk30hj4xGICftInKQKj1F3up2n8UbIVobISQ==}
+
+  follow-redirects@1.15.6:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
 
   form-data-encoder@1.7.2:
     resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
@@ -747,6 +855,10 @@ packages:
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
+
+  has-flag@4.0.0:
+    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    engines: {node: '>=8'}
 
   has-property-descriptors@1.0.2:
     resolution: {integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==}
@@ -821,6 +933,10 @@ packages:
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
+
+  json-bignum@0.0.3:
+    resolution: {integrity: sha512-2WHyXj3OfHSgNyuzDbSxI1w2jgw5gkWSWhS7Qg4bWXx1nLk3jnbwfUeS0PSba3IzpTUWdHxBieELUzXRjQB2zg==}
+    engines: {node: '>=0.8'}
 
   jsonpointer@5.0.1:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
@@ -1023,6 +1139,12 @@ packages:
       openai:
         optional: true
 
+  lodash.camelcase@4.3.0:
+    resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
+
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
@@ -1131,6 +1253,10 @@ packages:
     resolution: {integrity: sha512-rhIwUycgwwKcP9yTOOFK/AKsAopjjCakVqLHePO3CC6Mir1Z99xT+R63jZxAT5lFZLa2inS5h+ZS2GvR99/FBg==}
     engines: {node: '>=8'}
 
+  pad-left@2.1.0:
+    resolution: {integrity: sha512-HJxs9K9AztdIQIAIa/OIazRAUW/L6B9hbQDxO4X07roW3eo9XqZc2ur9bn1StH9CnbbI9EgvejHQX7CBpCF1QA==}
+    engines: {node: '>=0.10.0'}
+
   parse5-htmlparser2-tree-adapter@7.0.0:
     resolution: {integrity: sha512-B77tOZrqqfUfnVcOrUvfdLbz4pu4RopLD/4vmu3HUPswwTA8OH0EMW9BlWR2B0RCoiZRAHEUu7IxeP1Pd1UU+g==}
 
@@ -1155,6 +1281,9 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
+  proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
   pstree.remy@1.1.8:
     resolution: {integrity: sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==}
 
@@ -1173,6 +1302,10 @@ packages:
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
+
+  repeat-string@1.6.1:
+    resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
+    engines: {node: '>=0.10'}
 
   retry@0.13.1:
     resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
@@ -1224,9 +1357,22 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
 
+  stream-read-all@3.0.1:
+    resolution: {integrity: sha512-EWZT9XOceBPlVJRrYcykW8jyRSZYbkb/0ZK36uLEmoWVO5gxBOnntNTseNzfREsqxqdfEGQrD8SXQ3QWbBmq8A==}
+    engines: {node: '>=10'}
+
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
+
+  supports-color@7.2.0:
+    resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
+    engines: {node: '>=8'}
+
+  table-layout@3.0.2:
+    resolution: {integrity: sha512-rpyNZYRw+/C+dYkcQ3Pr+rLxW4CfHpXjPDnG7lYhdRoUcZTUt+KEsX+94RGp/aVp/MQU35JCITv2T/beY4m+hw==}
+    engines: {node: '>=12.17'}
+    hasBin: true
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -1249,6 +1395,14 @@ packages:
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
+
+  typical@4.0.0:
+    resolution: {integrity: sha512-VAH4IvQ7BDFYglMd7BPRDfLgxZZX4O4TFcRDA6EN5X7erNJJq+McIEp8np9aVtxrCJ6qx4GTYVfOWNjcqwZgRw==}
+    engines: {node: '>=8'}
+
+  typical@7.1.1:
+    resolution: {integrity: sha512-T+tKVNs6Wu7IWiAce5BgMd7OZfNYUndHwc5MknN+UHOudi7sGZzuHdCadllRuqJ3fPtgFtIH9+lt9qRv6lmpfA==}
+    engines: {node: '>=12.17'}
 
   undefsafe@2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
@@ -1280,6 +1434,14 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
+  vectordb@0.9.0:
+    resolution: {integrity: sha512-MUg8A0mgL2tOmeLJd47jKYtVGDsV70nAoIhEO7yZ1OSrUNQof6FLx0i4HILx7F/4+TJ71f26lTgtdvivFhtXnQ==}
+    cpu: [x64, arm64]
+    os: [darwin, linux, win32]
+    peerDependencies:
+      '@apache-arrow/ts': ^14.0.2
+      apache-arrow: ^14.0.2
+
   web-streams-polyfill@4.0.0-beta.3:
     resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
     engines: {node: '>= 14'}
@@ -1301,6 +1463,10 @@ packages:
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
+  wordwrapjs@5.1.0:
+    resolution: {integrity: sha512-JNjcULU2e4KJwUNv6CHgI46UvDGitb6dGryHajXTDiLgg1/RiGoPSDw4kZfYnwGtEXf2ZMeIewDQgFGzkCB2Sg==}
+    engines: {node: '>=12.17'}
+
   yaml@2.5.0:
     resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
     engines: {node: '>= 14'}
@@ -1320,6 +1486,24 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
+
+  '@75lb/deep-merge@1.1.2':
+    dependencies:
+      lodash: 4.17.21
+      typical: 7.1.1
+
+  '@apache-arrow/ts@14.0.2':
+    dependencies:
+      '@types/command-line-args': 5.2.0
+      '@types/command-line-usage': 5.0.2
+      '@types/node': 20.3.0
+      '@types/pad-left': 2.1.1
+      command-line-args: 5.2.1
+      command-line-usage: 7.0.1
+      flatbuffers: 23.5.26
+      json-bignum: 0.0.3
+      pad-left: 2.1.0
+      tslib: 2.6.3
 
   '@azure-rest/core-client@1.4.0':
     dependencies:
@@ -1384,11 +1568,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@langchain/azure-openai@0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+  '@lancedb/vectordb-darwin-arm64@0.4.20':
+    optional: true
+
+  '@lancedb/vectordb-darwin-x64@0.4.20':
+    optional: true
+
+  '@lancedb/vectordb-linux-arm64-gnu@0.4.20':
+    optional: true
+
+  '@lancedb/vectordb-linux-x64-gnu@0.4.20':
+    optional: true
+
+  '@lancedb/vectordb-win32-x64-msvc@0.4.20':
+    optional: true
+
+  '@langchain/azure-openai@0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
     dependencies:
       '@azure/core-auth': 1.7.2
       '@azure/openai': 1.0.0-beta.11
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       js-tiktoken: 1.0.14
       zod: 3.23.8
       zod-to-json-schema: 3.20.3(zod@3.23.8)
@@ -1397,21 +1596,23 @@ snapshots:
       - openai
       - supports-color
 
-  '@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))':
+  '@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2))':
     dependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
-      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
       cheerio: 1.0.0
+      lodash: 4.17.21
+      vectordb: 0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)
     transitivePeerDependencies:
       - '@gomomento/sdk-web'
       - '@langchain/anthropic'
@@ -1430,13 +1631,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+  '@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -1449,16 +1650,16 @@ snapshots:
 
   '@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))':
     dependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       ollama: 0.5.8
       uuid: 10.0.0
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/openai@0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))':
+  '@langchain/openai@0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       js-tiktoken: 1.0.14
       openai: 4.55.9(zod@3.23.8)
       zod: 3.23.8
@@ -1467,13 +1668,19 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
     dependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       js-tiktoken: 1.0.14
     transitivePeerDependencies:
       - langchain
       - openai
+
+  '@neon-rs/load@0.0.74': {}
+
+  '@types/command-line-args@5.2.0': {}
+
+  '@types/command-line-usage@5.0.2': {}
 
   '@types/node-fetch@2.6.11':
     dependencies:
@@ -1483,6 +1690,10 @@ snapshots:
   '@types/node@18.19.44':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/node@20.3.0': {}
+
+  '@types/pad-left@2.1.1': {}
 
   '@types/retry@0.12.0': {}
 
@@ -1507,6 +1718,10 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
+  ansi-styles@4.3.0:
+    dependencies:
+      color-convert: 2.0.1
+
   ansi-styles@5.2.0: {}
 
   anymatch@3.1.3:
@@ -1514,11 +1729,36 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
+  apache-arrow@14.0.2:
+    dependencies:
+      '@types/command-line-args': 5.2.0
+      '@types/command-line-usage': 5.0.2
+      '@types/node': 20.3.0
+      '@types/pad-left': 2.1.1
+      command-line-args: 5.2.1
+      command-line-usage: 7.0.1
+      flatbuffers: 23.5.26
+      json-bignum: 0.0.3
+      pad-left: 2.1.0
+      tslib: 2.6.3
+
   argparse@2.0.1: {}
+
+  array-back@3.1.0: {}
+
+  array-back@6.2.2: {}
 
   array-flatten@1.1.1: {}
 
   asynckit@0.4.0: {}
+
+  axios@1.7.4:
+    dependencies:
+      follow-redirects: 1.15.6
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
 
   balanced-match@1.0.2: {}
 
@@ -1566,6 +1806,15 @@ snapshots:
 
   camelcase@6.3.0: {}
 
+  chalk-template@0.4.0:
+    dependencies:
+      chalk: 4.1.2
+
+  chalk@4.1.2:
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+
   cheerio-select@2.1.0:
     dependencies:
       boolbase: 1.0.0
@@ -1601,9 +1850,29 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  color-convert@2.0.1:
+    dependencies:
+      color-name: 1.1.4
+
+  color-name@1.1.4: {}
+
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
+
+  command-line-args@5.2.1:
+    dependencies:
+      array-back: 3.1.0
+      find-replace: 3.0.0
+      lodash.camelcase: 4.3.0
+      typical: 4.0.0
+
+  command-line-usage@7.0.1:
+    dependencies:
+      array-back: 6.2.2
+      chalk-template: 0.4.0
+      table-layout: 3.0.2
+      typical: 7.1.1
 
   commander@10.0.1: {}
 
@@ -1756,7 +2025,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  find-replace@3.0.0:
+    dependencies:
+      array-back: 3.1.0
+
   flat@5.0.2: {}
+
+  flatbuffers@23.5.26: {}
+
+  follow-redirects@1.15.6: {}
 
   form-data-encoder@1.7.2: {}
 
@@ -1797,6 +2074,8 @@ snapshots:
       get-intrinsic: 1.2.4
 
   has-flag@3.0.0: {}
+
+  has-flag@4.0.0: {}
 
   has-property-descriptors@1.0.2:
     dependencies:
@@ -1877,18 +2156,20 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
+  json-bignum@0.0.3: {}
+
   jsonpointer@5.0.1: {}
 
-  langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)):
+  langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)):
     dependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.14
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -1896,14 +2177,15 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
-      '@langchain/community': 0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/community': 0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2))
       '@langchain/ollama': 0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))
+      axios: 1.7.4
       cheerio: 1.0.0
     transitivePeerDependencies:
       - encoding
       - openai
 
-  langsmith@0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)):
+  langsmith@0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -1912,9 +2194,13 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(axios@1.7.4)(cheerio@1.0.0)(lodash@4.17.21)(openai@4.55.9(zod@3.23.8))(vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(axios@1.7.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
       openai: 4.55.9(zod@3.23.8)
+
+  lodash.camelcase@4.3.0: {}
+
+  lodash@4.17.21: {}
 
   media-typer@0.3.0: {}
 
@@ -2011,6 +2297,10 @@ snapshots:
     dependencies:
       p-finally: 1.0.0
 
+  pad-left@2.1.0:
+    dependencies:
+      repeat-string: 1.6.1
+
   parse5-htmlparser2-tree-adapter@7.0.0:
     dependencies:
       domhandler: 5.0.3
@@ -2035,6 +2325,8 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
+  proxy-from-env@1.1.0: {}
+
   pstree.remy@1.1.8: {}
 
   qs@6.11.0:
@@ -2053,6 +2345,8 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+
+  repeat-string@1.6.1: {}
 
   retry@0.13.1: {}
 
@@ -2117,9 +2411,25 @@ snapshots:
 
   statuses@2.0.1: {}
 
+  stream-read-all@3.0.1: {}
+
   supports-color@5.5.0:
     dependencies:
       has-flag: 3.0.0
+
+  supports-color@7.2.0:
+    dependencies:
+      has-flag: 4.0.0
+
+  table-layout@3.0.2:
+    dependencies:
+      '@75lb/deep-merge': 1.1.2
+      array-back: 6.2.2
+      command-line-args: 5.2.1
+      command-line-usage: 7.0.1
+      stream-read-all: 3.0.1
+      typical: 7.1.1
+      wordwrapjs: 5.1.0
 
   to-regex-range@5.0.1:
     dependencies:
@@ -2138,6 +2448,10 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
+  typical@4.0.0: {}
+
+  typical@7.1.1: {}
+
   undefsafe@2.0.5: {}
 
   undici-types@5.26.5: {}
@@ -2153,6 +2467,21 @@ snapshots:
   uuid@9.0.1: {}
 
   vary@1.1.2: {}
+
+  vectordb@0.9.0(@apache-arrow/ts@14.0.2)(apache-arrow@14.0.2):
+    dependencies:
+      '@apache-arrow/ts': 14.0.2
+      '@neon-rs/load': 0.0.74
+      apache-arrow: 14.0.2
+      axios: 1.7.4
+    optionalDependencies:
+      '@lancedb/vectordb-darwin-arm64': 0.4.20
+      '@lancedb/vectordb-darwin-x64': 0.4.20
+      '@lancedb/vectordb-linux-arm64-gnu': 0.4.20
+      '@lancedb/vectordb-linux-x64-gnu': 0.4.20
+      '@lancedb/vectordb-win32-x64-msvc': 0.4.20
+    transitivePeerDependencies:
+      - debug
 
   web-streams-polyfill@4.0.0-beta.3: {}
 
@@ -2170,6 +2499,8 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+
+  wordwrapjs@5.1.0: {}
 
   yaml@2.5.0: {}
 
