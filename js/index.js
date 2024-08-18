@@ -9,14 +9,15 @@ dotenv.config({
 })
 
 import express from 'express';
-import DemoController from "./app/endpoints/demo.js";
+import DemoController from "./app/controller/DemoController.js";
 
-const apiRouter = express.Router();
+const ApiRouter = express.Router();
+
 const app = express();
-app.use("/api", apiRouter);
+app.use("/api", ApiRouter);
 
+DemoController(ApiRouter);
 
-DemoController(apiRouter);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log(`listening on port ${process.env.PORT || 5000}`);

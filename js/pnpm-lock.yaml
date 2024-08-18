@@ -8,12 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@langchain/azure-openai':
+        specifier: ^0.0.11
+        version: 0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       '@langchain/community':
         specifier: ^0.2.27
-        version: 0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+        version: 0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/core':
+        specifier: ^0.2.27
+        version: 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/ollama':
+        specifier: ^0.0.4
+        version: 0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))
       '@langchain/openai':
         specifier: ^0.2.6
-        version: 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+        version: 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
       cheerio:
         specifier: ^1.0.0
         version: 1.0.0
@@ -25,13 +34,53 @@ importers:
         version: 4.19.2
       langchain:
         specifier: ^0.2.16
-        version: 0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+        version: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
     devDependencies:
       nodemon:
         specifier: ^2.0.22
         version: 2.0.22
 
 packages:
+
+  '@azure-rest/core-client@1.4.0':
+    resolution: {integrity: sha512-ozTDPBVUDR5eOnMIwhggbnVmOrka4fXCs8n8mvUo4WLLc38kki6bAOByDoVZZPz/pZy2jMt2kwfpvy/UjALj6w==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/abort-controller@2.1.2':
+    resolution: {integrity: sha512-nBrLsEWm4J2u5LpAPjxADTlq3trDgVZZXHNKabeXZtpq3d3AbN/KGO82R87rdDz5/lYB024rtEf10/q0urNgsA==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/core-auth@1.7.2':
+    resolution: {integrity: sha512-Igm/S3fDYmnMq1uKS38Ae1/m37B3zigdlZw+kocwEhh5GjyKjPrXKO2J6rzpC1wAxrNil/jX9BJRqBshyjnF3g==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/core-rest-pipeline@1.16.3':
+    resolution: {integrity: sha512-VxLk4AHLyqcHsfKe4MZ6IQ+D+ShuByy+RfStKfSjxJoL3WBWq17VNmrz8aT8etKzqc2nAeIyLxScjpzsS4fz8w==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/core-sse@2.1.3':
+    resolution: {integrity: sha512-KSSdIKy8kvWCpYr8Hzpu22j3wcXsVTYE0IlgmI1T/aHvBDsLgV91y90UTfVWnuiuApRLCCVC4gS09ApBGOmYQA==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/core-tracing@1.1.2':
+    resolution: {integrity: sha512-dawW9ifvWAWmUm9/h+/UQ2jrdvjCJ7VJEuCJ6XVNudzcOwm53BFZH4Q845vjfgoUAM8ZxokvVNxNxAITc502YA==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/core-util@1.9.2':
+    resolution: {integrity: sha512-l1Qrqhi4x1aekkV+OlcqsJa4AnAkj5p0JV8omgwjaV9OAbP41lvrMvs+CptfetKkeEaGRGSzby7sjPZEX7+kkQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/logger@1.1.4':
+    resolution: {integrity: sha512-4IXXzcCdLdlXuCG+8UKEwLA1T1NHqUfanhXYHiQTn+6sfWCZXduqbtXDGceg3Ce5QxTGo7EqmbV6Bi+aqKuClQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/openai@1.0.0-beta.11':
+    resolution: {integrity: sha512-OXS27xkG1abiGf5VZUKnkJKr1VCo8+6EUrTGW5aSVjc5COqX8jAUqVAOZsQVCHBdtWYSBULlZkc0ncKMTRQAiQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@langchain/azure-openai@0.0.11':
+    resolution: {integrity: sha512-DugOrQknXAr1Hi5uLE5pFOzMCSQeR3YJsF4wBlyqUssgqPafzd5Rnvhir/gL5bQQ43HoglUqiL6qhIDDnA3Fug==}
+    engines: {node: '>=18'}
 
   '@langchain/community@0.2.27':
     resolution: {integrity: sha512-/D/aFzNXhlgwwBAwdX47aLLOdnupEFPPHBXmkj9h1PoFK2GKdwUDxK3YM7zIzZsO6+uSJgh9PUB8LI7gHPOjYA==}
@@ -399,8 +448,12 @@ packages:
       youtubei.js:
         optional: true
 
-  '@langchain/core@0.2.24':
-    resolution: {integrity: sha512-+m+0SX0QPwSiTxkbztqCpOEl0YKAy5MAW/u89ZKR+YChS/E3wg+3h+y1ysGq9hoom5spkQQq+SEZ1CwOf+LD8g==}
+  '@langchain/core@0.2.27':
+    resolution: {integrity: sha512-QAIlGxXWW7fox1oGmQjEHs1fbPaXOE9CeunmwZl9grFpu1igdkLbKnEJF7fjbVchyJHRB6yzpQ1bwP/S12O4mQ==}
+    engines: {node: '>=18'}
+
+  '@langchain/ollama@0.0.4':
+    resolution: {integrity: sha512-laYaYFZsbu0Mjhm40CypXPV5gYvQjd16oBEoGnFFjmCUgCCu6gjETg3tgvgifo7w+dhmNPLUyqnjXA/BpWEH2Q==}
     engines: {node: '>=18'}
 
   '@langchain/openai@0.2.6':
@@ -430,6 +483,10 @@ packages:
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
+
+  agent-base@7.1.1:
+    resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
+    engines: {node: '>= 14'}
 
   agentkeepalive@4.5.0:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
@@ -542,6 +599,15 @@ packages:
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.3.6:
+    resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
+    engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -703,6 +769,14 @@ packages:
   http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
     engines: {node: '>= 0.8'}
+
+  http-proxy-agent@7.0.2:
+    resolution: {integrity: sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig==}
+    engines: {node: '>= 14'}
+
+  https-proxy-agent@7.0.5:
+    resolution: {integrity: sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==}
+    engines: {node: '>= 14'}
 
   humanize-ms@1.2.1:
     resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
@@ -979,6 +1053,9 @@ packages:
   ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
+  ms@2.1.2:
+    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -1018,6 +1095,9 @@ packages:
   object-inspect@1.13.2:
     resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
     engines: {node: '>= 0.4'}
+
+  ollama@0.5.8:
+    resolution: {integrity: sha512-frBGdfSV34i7JybLZUeyCYDx0CMyDiG4On8xOK+cNRWM04HImhoWgIMpF4p7vTkQumadbSxOteR7SZyKqNmOXg==}
 
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -1163,6 +1243,9 @@ packages:
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
@@ -1208,6 +1291,9 @@ packages:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
 
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
+
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
     engines: {node: '>=18'}
@@ -1220,6 +1306,11 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
+  zod-to-json-schema@3.20.3:
+    resolution: {integrity: sha512-/Q3wnyxAfCt94ZcrGiXXoiAfRqasxl9CX64LZ9fj+4dKH68zulUtU0uk1WMxQPfAxQ0ZI70dKzcoW7hHj+DwSQ==}
+    peerDependencies:
+      zod: ^3.20.0
+
   zod-to-json-schema@3.23.2:
     resolution: {integrity: sha512-uSt90Gzc/tUfyNqxnjlfBs8W6WSGpNBv0rVsNxP/BVSMHMKGdthPYff4xtCHYloJGM0CFxFsb3NbC0eqPhfImw==}
     peerDependencies:
@@ -1230,16 +1321,92 @@ packages:
 
 snapshots:
 
-  '@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))':
+  '@azure-rest/core-client@1.4.0':
     dependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+      '@azure/abort-controller': 2.1.2
+      '@azure/core-auth': 1.7.2
+      '@azure/core-rest-pipeline': 1.16.3
+      '@azure/core-tracing': 1.1.2
+      '@azure/core-util': 1.9.2
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@azure/abort-controller@2.1.2':
+    dependencies:
+      tslib: 2.6.3
+
+  '@azure/core-auth@1.7.2':
+    dependencies:
+      '@azure/abort-controller': 2.1.2
+      '@azure/core-util': 1.9.2
+      tslib: 2.6.3
+
+  '@azure/core-rest-pipeline@1.16.3':
+    dependencies:
+      '@azure/abort-controller': 2.1.2
+      '@azure/core-auth': 1.7.2
+      '@azure/core-tracing': 1.1.2
+      '@azure/core-util': 1.9.2
+      '@azure/logger': 1.1.4
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.5
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@azure/core-sse@2.1.3':
+    dependencies:
+      tslib: 2.6.3
+
+  '@azure/core-tracing@1.1.2':
+    dependencies:
+      tslib: 2.6.3
+
+  '@azure/core-util@1.9.2':
+    dependencies:
+      '@azure/abort-controller': 2.1.2
+      tslib: 2.6.3
+
+  '@azure/logger@1.1.4':
+    dependencies:
+      tslib: 2.6.3
+
+  '@azure/openai@1.0.0-beta.11':
+    dependencies:
+      '@azure-rest/core-client': 1.4.0
+      '@azure/core-auth': 1.7.2
+      '@azure/core-rest-pipeline': 1.16.3
+      '@azure/core-sse': 2.1.3
+      '@azure/core-util': 1.9.2
+      '@azure/logger': 1.1.4
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@langchain/azure-openai@0.0.11(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+    dependencies:
+      '@azure/core-auth': 1.7.2
+      '@azure/openai': 1.0.0-beta.11
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      js-tiktoken: 1.0.14
+      zod: 3.23.8
+      zod-to-json-schema: 3.20.3(zod@3.23.8)
+    transitivePeerDependencies:
+      - langchain
+      - openai
+      - supports-color
+
+  '@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))':
+    dependencies:
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
-      langsmith: 0.1.41(@langchain/core@0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
@@ -1263,13 +1430,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+  '@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.41(@langchain/core@0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -1280,9 +1447,18 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/openai@0.2.6(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))':
+  '@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))':
     dependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      ollama: 0.5.8
+      uuid: 10.0.0
+    transitivePeerDependencies:
+      - langchain
+      - openai
+
+  '@langchain/openai@0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))':
+    dependencies:
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       js-tiktoken: 1.0.14
       openai: 4.55.9(zod@3.23.8)
       zod: 3.23.8
@@ -1291,9 +1467,9 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))':
     dependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       js-tiktoken: 1.0.14
     transitivePeerDependencies:
       - langchain
@@ -1320,6 +1496,12 @@ snapshots:
     dependencies:
       mime-types: 2.1.35
       negotiator: 0.6.3
+
+  agent-base@7.1.1:
+    dependencies:
+      debug: 4.3.6
+    transitivePeerDependencies:
+      - supports-color
 
   agentkeepalive@4.5.0:
     dependencies:
@@ -1456,6 +1638,10 @@ snapshots:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 5.5.0
+
+  debug@4.3.6:
+    dependencies:
+      ms: 2.1.2
 
   decamelize@1.2.0: {}
 
@@ -1639,6 +1825,20 @@ snapshots:
       statuses: 2.0.1
       toidentifier: 1.0.1
 
+  http-proxy-agent@7.0.2:
+    dependencies:
+      agent-base: 7.1.1
+      debug: 4.3.6
+    transitivePeerDependencies:
+      - supports-color
+
+  https-proxy-agent@7.0.5:
+    dependencies:
+      agent-base: 7.1.1
+      debug: 4.3.6
+    transitivePeerDependencies:
+      - supports-color
+
   humanize-ms@1.2.1:
     dependencies:
       ms: 2.1.3
@@ -1679,16 +1879,16 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)):
+  langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)):
     dependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      '@langchain/openai': 0.2.6(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.14
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.41(@langchain/core@0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langsmith: 0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -1696,13 +1896,14 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
-      '@langchain/community': 0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/community': 0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/ollama': 0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8))
       cheerio: 1.0.0
     transitivePeerDependencies:
       - encoding
       - openai
 
-  langsmith@0.1.41(@langchain/core@0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)):
+  langsmith@0.1.41(@langchain/core@0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)))(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8)):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -1711,8 +1912,8 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
-      langchain: 0.2.16(@langchain/community@0.2.27(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
+      '@langchain/core': 0.2.27(langchain@0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(openai@4.55.9(zod@3.23.8))
+      langchain: 0.2.16(@langchain/community@0.2.27(@langchain/ollama@0.0.4)(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8)))(@langchain/ollama@0.0.4(langchain@0.2.16)(openai@4.55.9(zod@3.23.8)))(cheerio@1.0.0)(openai@4.55.9(zod@3.23.8))
       openai: 4.55.9(zod@3.23.8)
 
   media-typer@0.3.0: {}
@@ -1734,6 +1935,8 @@ snapshots:
       brace-expansion: 1.1.11
 
   ms@2.0.0: {}
+
+  ms@2.1.2: {}
 
   ms@2.1.3: {}
 
@@ -1767,6 +1970,10 @@ snapshots:
       boolbase: 1.0.0
 
   object-inspect@1.13.2: {}
+
+  ollama@0.5.8:
+    dependencies:
+      whatwg-fetch: 3.6.20
 
   on-finished@2.4.1:
     dependencies:
@@ -1924,6 +2131,8 @@ snapshots:
 
   tr46@0.0.3: {}
 
+  tslib@2.6.3: {}
+
   type-is@1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -1953,6 +2162,8 @@ snapshots:
     dependencies:
       iconv-lite: 0.6.3
 
+  whatwg-fetch@3.6.20: {}
+
   whatwg-mimetype@4.0.0: {}
 
   whatwg-url@5.0.0:
@@ -1961,6 +2172,10 @@ snapshots:
       webidl-conversions: 3.0.1
 
   yaml@2.5.0: {}
+
+  zod-to-json-schema@3.20.3(zod@3.23.8):
+    dependencies:
+      zod: 3.23.8
 
   zod-to-json-schema@3.23.2(zod@3.23.8):
     dependencies:
