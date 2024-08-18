@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --ignore documents --ignore vector-cache --ignore storage --ignore swagger --trace-warnings index.js",
+    "setup": "node setup.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,11 @@
     "@langchain/community": "^0.2.27",
     "@langchain/openai": "^0.2.6",
     "cheerio": "^1.0.0",
-    "langchain": "^0.2.16"
+    "dotenv": "^16.4.5",
+    "langchain": "^0.2.16",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
