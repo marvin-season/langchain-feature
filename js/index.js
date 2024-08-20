@@ -7,7 +7,6 @@ dotenv.config({
 dotenv.config({
     path: `.env.${process.env.ENV}`,
 })
-
 import express from 'express';
 import DemoController from "./app/controller/DemoController.js";
 
